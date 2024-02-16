@@ -1,0 +1,365 @@
+### //get all users
+GET http://localhost:9500/api/users
+
+### // login router
+POST http://localhost:9500/api/users/auth/login
+content-Type: application/json
+
+{
+    "Username": "user176",
+    "Password": "passw1ord7"
+}
+
+
+### // register user
+POST http://localhost:9500/api/users/register
+content-Type: application/json
+
+{
+    "UserID": 85,
+    "Username": "user176",
+    "Email": "kamau781camaw@gmail.com",
+    "Password": "passw1ord7",
+    "TagName": "tag17",
+    "Location": "kir1inyaga"
+}
+
+
+
+### // create a user
+POST http://localhost:9500/api/users
+content-Type: application/json
+
+{
+    "UserID": 785,
+    "Username": "user76",
+    "Email": "kamau78camaw@gmail.com",
+    "Password": "password7",
+    "TagName": "tag7",
+    "Location": "kirinyaga"
+}
+
+### //delete user
+DELETE http://localhost:9500/api/users/78
+
+### //get a user by its id
+GET http://localhost:9500/api/users/2
+
+### update user email by id
+PUT http://localhost:9500/api/users/4
+content-Type: application/json
+
+{
+    "Email": "changedemail@gmail.com"
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//--COMMENTS API
+
+### //get all comments
+GET http://localhost:9500/api/comment
+
+### // create a new comment
+POST http://localhost:9500/api/comment/
+content-Type: application/json
+
+{
+    "CommentID": "4",
+    "PostID": "4",
+    "CommentDate": "2024-02-09",
+    "Content": "this is probably a new comment"
+}
+
+### // delete a comment
+DELETE http://localhost:9500/api/comment/4
+
+
+### //get a comment by its id 
+//-------------get a comment for a certain user
+GET http://localhost:9500/api/commentforuser
+
+### //get a comment by its id 
+GET http://localhost:9500/api/comment/3
+
+### // update a comment by id
+PUT http://localhost:9500/api/comment/1
+content-Type: application/json
+
+{
+    "Content": "just another comment"
+}
+
+/////////////////////////////////////////////////////////////////
+//--POST API
+
+### //GET all posts
+GET http://localhost:9500/api/post
+
+### // create a new post
+POST http://localhost:9500/api/post/
+content-Type: application/json
+
+{
+    "PostID": "14",
+    "UserID": "14",
+    "Content": "this is definetly a new post",
+    "PostDate": "2027",
+    "Likes": "14",
+    "Comments": 14
+}
+
+### // delete a post
+DELETE http://localhost:9500/api/post/4
+
+### //GET post BY ITS ID
+GET http://localhost:9500/api/post/2
+
+### // update a post by id
+PUT http://localhost:9500/api/post/3
+content-Type: application/json
+
+{
+    "Content": "post content 4"
+}
+
+
+/////////////////////////////////////////////////////////////////
+//--Photo API
+
+### //GET all photos
+GET http://localhost:9500/api/photo
+
+### // create a new photo
+POST http://localhost:9500/api/photo
+content-Type: application/json
+
+{
+    "PhotoID": "4",
+    "UserID": "4",
+    "PhotoURL": ".jpeg",
+    "UploadDate": "2023"
+}
+
+### // delete a photo
+DELETE http://localhost:9500/api/photo/4
+
+### //GET photo BY ITS ID
+GET http://localhost:9500/api/photo/2
+
+### // update a photo by id
+PUT http://localhost:9500/api/photo/3
+content-Type: application/json
+
+{
+    "PhotoURL": ".png"
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+//--message API
+
+### //GET all messages
+GET http://localhost:9500/api/message
+
+### // create a new message
+POST http://localhost:9500/api/message
+content-Type: application/json
+
+{
+    "MessageID": 6,
+    "SenderID": 1,
+    "ReceiverID": 1,
+    "MessageDate": "2024-09-23T13:35:22.860Z",
+    "Content": "New message has been created",
+    "PhotoID": 5
+}
+
+
+### // delete a message by id
+DELETE http://localhost:9500/api/message/6
+
+### //GET message BY ITS ID
+GET http://localhost:9500/api/message/5
+
+### // update a message by id
+PUT http://localhost:9500/api/message/1
+content-Type: application/json
+
+{
+    "Content": "a message to myself"
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+//--group API
+
+### //GET all groups
+GET http://localhost:9500/api/group
+
+### // create a new message
+POST http://localhost:9500/api/group/
+content-Type: application/json
+
+{
+    "GroupID": 19,
+    "GroupName": "Group 10",
+    "Description": "a new Description for Group 13",
+    "CreatedDate": "2029-12-09T13:32:45.693Z"
+  }
+
+
+### // delete a message by id
+DELETE http://localhost:9500/api/group/9
+
+###-- all messages between UserID 1 and UserID 2
+GET http://localhost:9500/api/messagebetween/1
+
+
+### //GET message BY ITS ID
+GET http://localhost:9500/api/group/9
+
+### // update a message by id
+PUT http://localhost:9500/api/group/9
+content-Type: application/json
+
+{
+    "Description": "a new opinionated description"
+}
+////////////////////////////////////////////////////////////////
+//--groupMember API
+
+### //GET all groupsmembers
+GET http://localhost:9500/api/groupmembers
+
+### // create a new groupmember
+POST http://localhost:9500/api/groupmembers
+content-Type: application/json
+
+{
+    "GroupID": 7,
+    "MemberID": 7
+}
+
+### // delete a groupmember by id
+DELETE http://localhost:9500/api/groupmembers/2
+
+###--Group members and their details for GroupID = 1
+GET http://localhost:9500/api/groupmembersdisplay/1
+
+### //GET groupmember BY ITS ID
+GET http://localhost:9500/api/groupmembers/2
+
+### // update a groupmember by id
+PUT http://localhost:9500/api/groupmembers/1
+content-Type: application/json
+
+{
+    "MemberID": 4
+}
+
+
+////////////////////////////////////////////////////////////////
+//--Friendship API
+
+### //GET all friendships
+GET http://localhost:9500/api/friendship
+
+
+### // create a new frindship
+POST http://localhost:9500/api/friendship
+content-Type: application/json
+
+{
+  "FriendshipID": 7,
+  "User1ID": "1",
+  "User2ID": "3",
+  "FriendshipDate": 2025
+}
+
+### // delete a friendship by id
+DELETE http://localhost:9500/api/friendship/1
+
+### //Retrieve all friends of a user
+//--friends of user with UserID 1 
+GET http://localhost:9500/api/friendsofuser/1
+
+### // update a friendship by id
+PUT http://localhost:9500/api/friendship/1
+content-Type: application/json
+
+{
+    "FriendshipID": "123"
+}
+
+
+////////////////////////////////////////////////////////////////
+//--Event API
+
+### //GET all events
+GET http://localhost:9500/api/event
+
+### // create a new event
+POST http://localhost:9500/api/event
+content-Type: application/json
+
+  {
+    "EventID": 4,
+    "EventName": "Event 4",
+    "Descri_ption": "Description for new Event 4",
+    "EventDate": "2029-02-09T13:34:13.957Z",
+    "Location": "Location 4",
+    "EventPosterURL": "poster_url_4"
+  }
+### // delete an event by id
+DELETE http://localhost:9500/api/event/4
+
+
+### //GET event BY ITS ID
+//display event details and the details of their attendees
+GET http://localhost:9500/api/eventattendeedetails
+
+### //GET event BY ITS ID
+//--events attended by user with UserID 1
+GET http://localhost:9500/api/eventattended/1
+
+### //GET event BY ITS ID
+GET http://localhost:9500/api/event/6
+
+### // update an event by id
+PUT http://localhost:9500/api/event/6
+content-Type: application/json
+
+{
+    "EventID": "6"
+}
+
+
+////////////////////////////////////////////////////////////////
+//--EventAttendee API
+
+### //GET all EventAttendee
+GET http://localhost:9500/api/eventattendee
+
+### // create a new EventAttendee
+POST http://localhost:9500/api/eventattendee
+content-Type: application/json
+
+  {
+    "EventID": 3,
+    "AttendeeID": 4
+  }
+### // delete an EventAttendee by id
+DELETE http://localhost:9500/api/event/2
+
+### //GET EventAttendee BY ITS ID
+GET http://localhost:9500/api/eventattendee/2
+
+### // update an EventAttendee by id
+PUT http://localhost:9500/api/eventattendee/2
+content-Type: application/json
+
+{
+    "EventID": "6"
+}

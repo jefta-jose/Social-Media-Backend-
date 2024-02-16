@@ -1,0 +1,329 @@
+.RightMoreInfo {
+  width: 100%;
+  height: 60vh;
+
+  .upper-right {
+    height: 20vh;
+    width: 100%;
+
+    .upper-right1 {
+      display: flex;
+      flex-direction: column;
+
+      .upper-right-details2 {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .p-img {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      .upper-right-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+          width: 10%;
+          height: 10%;
+          margin-left: 5px;
+        }
+
+        input {
+          width: 80%;
+          border-radius: 5px;
+          height: 5vh;
+          border: 2px solid gainsboro;
+        }
+      }
+    }
+  }
+
+  .lower-right {
+    height: 40vh;
+    width: 100%;
+    overflow-x: hidden;
+
+    .lower-img-details {
+      height: 8vh;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+
+      .img-img {
+        display: flex;
+        flex-direction: row;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-right-text {
+      height: 7vh;
+      width: 100%;
+    }
+
+    .lower-right-images {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20vh;
+      overflow-y: hidden;
+
+      .image123 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+
+        img {
+          width: 40%;
+          height: 14vh;
+        }
+      }
+
+      .image-icons-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+
+        .image-icons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+
+    .write-your-message {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 2px solid gainsboro;
+      justify-content: space-between;
+      padding: 0 20px 0 20px;
+
+      input {
+        width: 90%;
+        border: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .RightMoreInfo {
+    .upper-right {
+      input {
+        padding-left: 10px;
+      }
+
+      .upper-right-details2 {
+        display: grid;
+        place-items: center;
+
+        .p-img {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          p {
+            font-size: 10px;
+            padding-left: -5rem;
+          }
+        }
+      }
+    }
+    .lower-right {
+      overflow: hidden;
+      height: 360vh;
+
+      .lower-img-details {
+        .img-img {
+          display: flex;
+          flex-direction: column;
+          font-size: 13px;
+
+          .heading34 {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .write-your-message{
+        border: 1px solid;
+        width: 98%;
+        margin: auto;
+        border-radius: 5px;
+        background-color: gainsboro;
+
+        img{
+          background: none;
+        }
+
+        input{
+          background: none;
+        }
+      }
+
+      .lower-right-images {
+        .image123 {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 100%;
+          img{
+            width: 48%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+          }
+        }
+      }
+
+      .image-icons-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .image-icons{
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 12px;
+          height: 7vh;
+
+          img{
+            background: none;
+          }
+
+          p{
+            font-size: 10px;
+          }
+        }
+      }
+      .lower-right-text {
+        font-weight: 500;
+        font-size: 12px;
+        height: 5vh;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 426px) {
+  .RightMoreInfo {
+    .upper-right {
+      input {
+        padding-left: 10px;
+      }
+
+      .upper-right-details2 {
+        display: grid;
+        place-items: center;
+
+        .p-img {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          p {
+            font-size: 10px;
+            padding-left: -5rem;
+          }
+        }
+      }
+    }
+    .lower-right {
+      overflow: hidden;
+      height: 360vh;
+
+      .lower-img-details {
+        .img-img {
+          display: flex;
+          flex-direction: column;
+          font-size: 13px;
+
+          .heading34 {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .write-your-message{
+        border: 1px solid;
+        width: 98%;
+        margin: auto;
+        border-radius: 5px;
+        background-color: gainsboro;
+
+        img{
+          background: none;
+        }
+
+        input{
+          background: none;
+        }
+      }
+
+      .lower-right-images {
+        .image123 {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 100%;
+          img{
+            width: 48%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+          }
+        }
+      }
+
+      .image-icons-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .image-icons{
+          display: flex;
+          flex-direction: row;
+          padding-bottom: 12px;
+          height: 7vh;
+
+          img{
+            background: none;
+          }
+
+          p{
+            font-size: 10px;
+          }
+        }
+      }
+      .lower-right-text {
+        font-weight: 500;
+        font-size: 12px;
+        height: 5vh;
+        width: 95%;
+        margin: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.MainContentRight {
+  height: 100%;
+  width: 15vw;
+}
+
+
+@media screen and (max-width: 426px) {
+  .MainContentRight{
+    display: none;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 768px) {
+  .MainContentRight{
+    display: none;
+  }
+}

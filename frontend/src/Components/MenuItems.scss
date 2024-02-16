@@ -1,0 +1,40 @@
+.menuitems2 {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: unset;
+
+  .MENuitem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    // padding: 16px 24px;
+    height: 5vh;
+
+
+    .menuIcons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      height: 5vh;
+      text-decoration: none;
+    }
+
+    .valueofMenu {
+      display: flex;
+      flex-direction: row;
+      justify-self: flex-end;
+      position: relative;
+      right: -3rem;
+    }
+  }
+}
+
+// @media screen and (max-width: 400px) {
+//   .menuitems2{
+//     display: none;
+//   }
+// }

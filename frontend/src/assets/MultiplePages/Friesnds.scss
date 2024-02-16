@@ -1,0 +1,455 @@
+.Freinds-container {
+  width: 70vw;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+  overflow-y: hidden;
+  grid-template-areas:
+    "a  b"
+    "c d"
+    "e f"
+    "g h"
+    "i j";
+
+  .angie {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .wade {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .jane {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .esther {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .brooklyn {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .leslie {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .jenny {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: g;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .robert {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: h;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .cody {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: i;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .kristin {
+    border: 2px solid gainsboro;
+    border-radius: 0.6rem;
+    grid-area: j;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 10px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .lower-angie-details {
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 80%;
+        height: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 426px) {
+  .Freinds-container {
+    width: 100%;
+    height: 300vh;
+    position: absolute;
+    left: 0;
+    top: 4.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .angie,
+    .wade,
+    .jane,
+    .esther,
+    .brooklyn,
+    .leslie,
+    .jenny,
+    .robert,
+    .cody,
+    .kristin {
+      margin-top: 1rem;
+      height: 40vh;
+    }
+
+    .upper-angie-details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .angie-name-details {
+        position: relative;
+        left: 0.1rem;
+
+        h3 {
+          font-size: 10px;
+        }
+        p {
+          font-size: 10px;
+        }
+      }
+      .dots {
+        font-size: 9px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (min-width: 427px) and (max-width: 768px) {
+  .Freinds-container {
+    width: 100%;
+    height: 120vh;
+    position: absolute;
+    left: 0;
+    top: 4.1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 10px 0 10px;
+
+    .angie,
+    .wade,
+    .jane,
+    .esther,
+    .brooklyn,
+    .leslie,
+    .jenny,
+    .robert,
+    .cody,
+    .kristin {
+      height: 20vh;
+    }
+
+    .angie-name-details {
+      position: relative;
+      left: -3.8rem;
+
+      h3 {
+        font-size: 15px;
+      }
+    }
+    .dots {
+      font-size: 10px;
+      font-weight: 700;
+    }
+  }
+}

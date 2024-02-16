@@ -1,0 +1,106 @@
+form {
+  background-image: url(/src/assets/alexander-shatov-CTZhGbSxWLI-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  // background-color: rgba(0, 0, 0, 0.6);
+
+  .form-holder {
+    margin: auto;
+    border-radius: 30px;
+    height: 60vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    .f-imager {
+      flex: 1;
+      background: none;
+
+      button{
+        position: relative;
+        top: -16rem;
+        width: 120px;
+        height: 30px;
+        cursor: pointer;
+        margin-left: 25px;
+        border: 2px solid black;
+        background-color: orangered;
+        border-radius: 5px;
+
+      }
+
+      p {
+        position: relative;
+        z-index: 1;
+        top: -16rem;
+        background: none;
+        color: white;
+        font-weight: 800;
+        font-size: 25px;
+        margin-left: 25px;
+      }
+
+      .register-message {
+        font-weight: 400;
+        color: gainsboro;
+        font-size: 15px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+      }
+    }
+
+    .f-f-f-f {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      font-weight: 700;
+      border-radius: 30px;
+
+      img {
+        width: 30px;
+      }
+
+      .input {
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+
+        .email-input {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .btn {
+          width: 8vw;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        input {
+          height: 5vh;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background-color: greenyellow;
+          }
+        }
+      }
+    }
+  }
+}
