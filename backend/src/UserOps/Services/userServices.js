@@ -60,7 +60,7 @@ export const findByCredentialsService = async (user) => {
                         email: userData.email
                     },
                     process.env.JWT_SECRET,
-                    { expiresIn: "2h" }
+                    { expiresIn: "24h" }
                 );
 
                 return { success: true, user: userData, token: `JWT ${token}`, message: 'Login successful' };

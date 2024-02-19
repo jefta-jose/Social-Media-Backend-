@@ -3,12 +3,13 @@ import { getaCommenttForUser,getComment, deleteComment, getCommentById, updateCo
 import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 const commentRouter = Router();
-commentRouter.get('/comment', getComment);
-commentRouter.post('/comment', createComment);
-commentRouter.put('/comment/:id', updateComment);
-commentRouter.get('/comment/:id', getCommentById);
+commentRouter.get('/comment', authenticateOperations, getComment);
+commentRouter.post('/comment', authenticateOperations, createComment);
+commentRouter.put('/comment/:id', authenticateOperations, updateComment);
+commentRouter.get('/comment/:id', authenticateOperations, getCommentById);
 commentRouter.delete('/comment/:id', authenticateOperations, deleteComment);
-commentRouter.get('/commentforuser', getaCommenttForUser);
+commentRouter.get('/commentforuser', authenticateOperations, getaCommenttForUser);
+
 
 
 export default commentRouter;

@@ -7,8 +7,8 @@ POST http://localhost:9500/api/users/auth/login
 content-Type: application/json
 
 {
-    "Username": "user15",
-    "Password": "pa00sT2Y2sewor3d1"
+    "Username": "user250",
+    "Password": "pass1234"
 }
 
 ### // register user
@@ -16,30 +16,29 @@ POST http://localhost:9500/api/users/register
 content-Type: application/json
 
 {
-    "Username": "user15",
-    "Email": "Katedngth@gmail.com",
-    "Password": "pa00sT2Y2sewor3d1",
+    "Username": "user250",
+    "Email": "Katendegw0a37@gmail.com",
+    "Password": "pass1234",
     "TagName": "tag10",
     "Location": "Kamuyu"
 }
 
 ### //delete user
-DELETE http://localhost:9500/api/users/1012
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
+DELETE http://localhost:9500/api/users/1016
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### //get a user by its id
-GET http://localhost:9500/api/users/3
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
+GET http://localhost:9500/api/users/1015
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 
 ### update user email by id
-PUT http://localhost:9500/api/users/1008
+PUT http://localhost:9500/api/users/1015
 content-Type: application/json
-Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
-
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "Email": "Katedngth@gmail.com"
+    "Email": "ndegwajeff4@gmail.com"
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,29 +46,24 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgs
 
 ### //get all comments
 GET http://localhost:9500/api/comment
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new comment
 POST http://localhost:9500/api/comment/
 content-Type: application/json
-Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjU1NDUsImV4cCI6MTcwODM3Mjc0NX0.XaGTne0w8eJJBcYKUyN5U1UqxrHRkWC6lUhuIAvAvxk
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "UserID": 1009,
-    "CommentID": "9",
-    "PostID": "5607",
+    "UserID": 1015,
+    "CommentID": "4",
+    "PostID": "5",
     "CommentDate": "2024-02-09",
     "Content": "this is probably a new comment"
 }
 
 ### // delete a comment
-DELETE http://localhost:9500/api/comment/9
-Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjY5MjgsImV4cCI6MTcwODM3NDEyOH0.p3SJqjA2WuXPomZXUGkTVyaRI315k261JJrFNZbEC-o
-
-
-
-
-
-
+DELETE http://localhost:9500/api/comment/7
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### //get a comment by its id 
 //-------------get a comment for a certain user
@@ -91,14 +85,16 @@ content-Type: application/json
 
 ### //GET all posts
 GET http://localhost:9500/api/post
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new post
 POST http://localhost:9500/api/post/
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "PostID": "5607",
-    "UserID": "1009",
+    "PostID": "5",
+    "UserID": "1015",
     "Content": "this is definetly a new post",
     "PostDate": "2027",
     "Likes": "14",
@@ -106,10 +102,12 @@ content-Type: application/json
 }
 
 ### // delete a post
-DELETE http://localhost:9500/api/post/5607
+DELETE http://localhost:9500/api/post/567
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### //GET post BY ITS ID
-GET http://localhost:9500/api/post/2
+GET http://localhost:9500/api/post/5
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // update a post by id
 PUT http://localhost:9500/api/post/3
@@ -125,14 +123,16 @@ content-Type: application/json
 
 ### //GET all photos
 GET http://localhost:9500/api/photo
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new photo
 POST http://localhost:9500/api/photo
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
     "PhotoID": "4",
-    "UserID": "4",
+    "UserID": "1015",
     "PhotoURL": ".jpeg",
     "UploadDate": "2023"
 }
@@ -158,13 +158,15 @@ content-Type: application/json
 
 ### //GET all messages
 GET http://localhost:9500/api/message
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new message
 POST http://localhost:9500/api/message
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "MessageID": 6,
+    "MessageID": 4,
     "SenderID": 1,
     "ReceiverID": 1,
     "MessageDate": "2024-09-23T13:35:22.860Z",
@@ -194,14 +196,16 @@ content-Type: application/json
 
 ### //GET all groups
 GET http://localhost:9500/api/group
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new message
 POST http://localhost:9500/api/group/
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "GroupID": 19,
-    "GroupName": "Group 10",
+    "GroupID": 3,
+    "GroupName": "Group 3",
     "Description": "a new Description for Group 13",
     "CreatedDate": "2029-12-09T13:32:45.693Z"
   }
@@ -229,14 +233,16 @@ content-Type: application/json
 
 ### //GET all groupsmembers
 GET http://localhost:9500/api/groupmembers
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 ### // create a new groupmember
 POST http://localhost:9500/api/groupmembers
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-    "GroupID": 7,
-    "MemberID": 7
+    "GroupID": 3,
+    "MemberID": 3
 }
 
 ### // delete a groupmember by id
@@ -262,15 +268,18 @@ content-Type: application/json
 
 ### //GET all friendships
 GET http://localhost:9500/api/friendship
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
+
 
 
 ### // create a new frindship
 POST http://localhost:9500/api/friendship
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
 {
-  "FriendshipID": 7,
-  "User1ID": "1",
+  "FriendshipID": 3,
+  "User1ID": "1015",
   "User2ID": "3",
   "FriendshipDate": 2025
 }
@@ -296,14 +305,17 @@ content-Type: application/json
 
 ### //GET all events
 GET http://localhost:9500/api/event
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
+
 
 ### // create a new event
 POST http://localhost:9500/api/event
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
   {
-    "EventID": 4,
-    "EventName": "Event 4",
+    "EventID": 5,
+    "EventName": "Event 5",
     "Descri_ption": "Description for new Event 4",
     "EventDate": "2029-02-09T13:34:13.957Z",
     "Location": "Location 4",
@@ -338,14 +350,17 @@ content-Type: application/json
 
 ### //GET all EventAttendee
 GET http://localhost:9500/api/eventattendee
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
+
 
 ### // create a new EventAttendee
 POST http://localhost:9500/api/eventattendee
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjk5NzYsImV4cCI6MTcwODQ1NjM3Nn0.BcTYG6MTZ_lkpedVXAOHw-vIeezLyUCd0kE_ZGPwspA
 
   {
-    "EventID": 3,
-    "AttendeeID": 4
+    "EventID": 5,
+    "AttendeeID": 1015
   }
 ### // delete an EventAttendee by id
 DELETE http://localhost:9500/api/event/2

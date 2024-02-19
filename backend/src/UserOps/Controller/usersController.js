@@ -116,7 +116,8 @@ export const getUserById = async (req, res) => {
         const userId = req.params.id;
 
         // Query the database to get the user by ID
-        const user = await getsUserByIdFromDatabase(userId);
+        const user = await getSUserByIdFromDatabase(userId);
+        console.table(user);
 
         if (!user) {
             sendNotFound(res, 'User not found');
@@ -128,13 +129,26 @@ export const getUserById = async (req, res) => {
     }
 }
 
-async function getsUserByIdFromDatabase(userId) {
+async function getSUserByIdFromDatabase(userId) {
     try {
-        const result = await poolRequest()
-            .input('UserID', sql.VarChar, userId)
-            .query("SELECT * FROM tbl_User WHERE UserID = @UserID");
+        const query = `
+        SELECT u.*, p.*, c.*, m.*, g.*, e.*
+        FROM tbl_user u
+        LEFT JOIN Post p ON u.UserID = p.UserID
+        LEFT JOIN Comment c ON u.UserID = c.UserID
+        LEFT JOIN Message m ON u.UserID = m.SenderID OR u.UserID = m.ReceiverID
+        LEFT JOIN GroupMembers gm ON u.UserID = gm.MemberID
+        LEFT JOIN Grouptable g ON gm.GroupID = g.GroupID
+        LEFT JOIN Eventattendee ea ON u.UserID = ea.AttendeeID
+        LEFT JOIN Event e ON ea.EventID = e.EventID
+        WHERE u.UserID = @userId;
+        `;
 
-        return result.recordset[0]; // Assuming UserID is unique
+        const result = await poolRequest()
+            .input('userId', sql.VarChar, userId)
+            .query(query);
+
+        return result.recordset[0];
     } catch (error) {
         throw error;
     }
@@ -247,4 +261,4 @@ async function deleteUserService(userId) {
         throw error;
     }
 }
-/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////

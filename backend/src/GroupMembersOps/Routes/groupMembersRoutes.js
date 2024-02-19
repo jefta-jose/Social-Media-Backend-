@@ -1,13 +1,16 @@
 import { Router } from 'express';
 import { displayMember,getGroupMember, deleteGroupMember, getGroupMemberById, updateGroupMember, createGroupMember } from "../Controller/groupMembersController.js";
+import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 const groupMemberRouter = Router();
-groupMemberRouter.get('/groupmembers', getGroupMember);
-groupMemberRouter.post('/groupmembers', createGroupMember);
-groupMemberRouter.put('/groupmembers/:id', updateGroupMember);
-groupMemberRouter.get('/groupmembers/:id', getGroupMemberById);
-groupMemberRouter.delete('/groupmembers/:id', deleteGroupMember);
-groupMemberRouter.get('/groupmembersdisplay/:id', displayMember);
+// Use authenticateOperations middleware for protected routes
+groupMemberRouter.get('/groupmembers', authenticateOperations, getGroupMember);
+groupMemberRouter.post('/groupmembers', authenticateOperations, createGroupMember);
+groupMemberRouter.put('/groupmembers/:id', authenticateOperations, updateGroupMember);
+groupMemberRouter.get('/groupmembers/:id', authenticateOperations, getGroupMemberById);
+groupMemberRouter.delete('/groupmembers/:id', authenticateOperations, deleteGroupMember);
+groupMemberRouter.get('/groupmembersdisplay/:id', authenticateOperations, displayMember);
+
 
 
 export default groupMemberRouter;

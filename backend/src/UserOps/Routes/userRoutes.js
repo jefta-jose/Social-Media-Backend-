@@ -1,11 +1,9 @@
 import { Router } from 'express';
-import { loginUser, registerUser, getUserById, deleteUser, getUser, updateUser, } from "../Controller/usersController.js";
+import { getUserById, loginUser, registerUser, deleteUser, getUser, updateUser, } from "../Controller/usersController.js";
 import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 
 const userRouter = Router();
-
-
 userRouter.put('/users/:id', authenticateOperations, updateUser);
 userRouter.get('/users/:id', authenticateOperations, getUserById);
 userRouter.delete('/users/:id', authenticateOperations, deleteUser);

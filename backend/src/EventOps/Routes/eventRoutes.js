@@ -1,14 +1,16 @@
 import { Router } from 'express';
 import { getEventAttendeeDetails,getEventAttended,getEvent, deleteEvent, getEventById, updateEvent, createEvent } from "../Controller/eventController.js";
+import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 const eventRouter = Router();
-eventRouter.get('/event', getEvent);
-eventRouter.post('/event', createEvent);
-eventRouter.put('/event/:id', updateEvent);
-eventRouter.get('/event/:id', getEventById);
-eventRouter.delete('/event/:id', deleteEvent);
-eventRouter.get('/eventattended/:id', getEventAttended);
-eventRouter.get('/eventattendeedetails', getEventAttendeeDetails);
+eventRouter.get('/event', authenticateOperations, getEvent);
+eventRouter.post('/event', authenticateOperations, createEvent);
+eventRouter.put('/event/:id', authenticateOperations, updateEvent);
+eventRouter.get('/event/:id', authenticateOperations, getEventById);
+eventRouter.delete('/event/:id', authenticateOperations, deleteEvent);
+eventRouter.get('/eventattended/:id', authenticateOperations, getEventAttended);
+eventRouter.get('/eventattendeedetails', authenticateOperations, getEventAttendeeDetails);
+
 
 
 
