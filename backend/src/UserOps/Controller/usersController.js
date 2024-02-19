@@ -9,8 +9,8 @@ import emailTemp from '../../Emails/Email.js';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // contoller function to register a user
 export const registerUser = async (req, res) => {
-    const { UserID, Username, Password, Email, TagName, Location } = req.body;
-    const { error } = userValidator({ UserID, Username, Password, Email, TagName, Location });
+    const { Username, Password, Email, TagName, Location } = req.body;
+    const { error } = userValidator({ Username, Password, Email, TagName, Location });
 
     if (error) {
         return res.status(400).send(error.details[0].message);
@@ -18,7 +18,7 @@ export const registerUser = async (req, res) => {
         try {
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(Password, salt);
-            const newUser = { UserID, Username, Password: hashedPassword, Email, TagName, Location };
+            const newUser = { Username, Password: hashedPassword, Email, TagName, Location };
             const response = await addUserService(newUser);
 
             if (response.message) {
@@ -48,7 +48,7 @@ const sendRegistrationEmail = async (userEmail) => {
     const mailOptions = {
         from: process.env.EMAIL,
         to: userEmail,
-        subject: 'Welcom to the Senior Devs',
+        subject: 'Welcom to the Senior Devs Club',
         html: emailTemp
     };
 
@@ -141,32 +141,6 @@ async function getsUserByIdFromDatabase(userId) {
 }
 ////////////////////////////////////////////////////
 
-export const createUser = async (req, res) => {
-    const newUser = {
-        UserID: req.body.UserID,
-        Username: req.body.Username,
-        Email: req.body.Email,
-        Password: req.body.Password,
-        TagName: req.body.TagName,
-        Location: req.body.Location,
-    }
-
-    const { error } = userValidator(newUser);
-    if (error) {
-        return res.status(400).send(error.details[0].message);
-    } else {
-        try {
-            let response = await addUserService(newUser);
-            if (response.message) {
-                sendServerError(res, response.message);
-            } else {
-                sendCreated(res, `User with username: ${newUser.Username} was created successfully`);  // Corrected
-            }
-        } catch (error) {
-            sendServerError(res, error.message);
-        }
-    }
-}
 ///////////////////////////////////////
 export const updateUser = async (req, res) => {
     try {
@@ -180,6 +154,13 @@ export const updateUser = async (req, res) => {
         } else {
             if (checkIfValuesIsEmptyNullUndefined(req, res, req.body)) {
                 if (req.body.Email) {
+                    // Check if the new email already exists in the database
+                    const emailExists = await checkEmailExistsInDatabase(req.body.Email, userId);
+
+                    if (emailExists) {
+                        return res.status(400).json({ error: 'Email already exists. Choose a different email.' });
+                    }
+
                     // Log the current user.Email before updating
                     console.log('Current Email:', user.Email);
 
@@ -201,6 +182,19 @@ export const updateUser = async (req, res) => {
     }
 };
 
+async function checkEmailExistsInDatabase(email, userId) {
+    try {
+        const result = await poolRequest()
+            .input('Email', sql.VarChar, email)
+            .input('UserID', sql.VarChar, userId)
+            .query("SELECT COUNT(*) AS Count FROM tbl_User WHERE Email = @Email AND UserID <> @UserID");
+
+        return result.recordset[0].Count > 0;
+    } catch (error) {
+        throw error;
+    }
+}
+
 async function updateEmailInDatabase(userId, newEmail) {
     try {
         await poolRequest()
@@ -211,7 +205,6 @@ async function updateEmailInDatabase(userId, newEmail) {
         throw error;
     }
 }
-
 
 ////////////////////////////////////////////////////////////////////////
 export const deleteUser = async (req, res) => {

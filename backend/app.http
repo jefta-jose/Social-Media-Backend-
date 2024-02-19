@@ -2,41 +2,44 @@
 GET http://localhost:9500/api/users
 
 
-### // login router
+### // login
 POST http://localhost:9500/api/users/auth/login
 content-Type: application/json
 
 {
-    "Username": "user001",
-    "Password": "pa00sTYsewor3d1"
+    "Username": "user15",
+    "Password": "pa00sT2Y2sewor3d1"
 }
-
 
 ### // register user
 POST http://localhost:9500/api/users/register
 content-Type: application/json
 
 {
-    "UserID": 254,
-    "Username": "user001",
-    "Email": "Katendegwa37@gmail.com",
-    "Password": "pa00sTYsewor3d1",
-    "TagName": "tag254",
-    "Location": "Kiambu"
+    "Username": "user15",
+    "Email": "Katedngth@gmail.com",
+    "Password": "pa00sT2Y2sewor3d1",
+    "TagName": "tag10",
+    "Location": "Kamuyu"
 }
 
 ### //delete user
-DELETE http://localhost:9500/api/users/254
+DELETE http://localhost:9500/api/users/1012
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
 
 ### //get a user by its id
-GET http://localhost:9500/api/users/2
+GET http://localhost:9500/api/users/3
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
+
 
 ### update user email by id
-PUT http://localhost:9500/api/users/4
+PUT http://localhost:9500/api/users/1008
 content-Type: application/json
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjczMjgsImV4cCI6MTcwODM3NDUyOH0.rYTs55yacncCyTb43y4RfcAzAwrXMZJ6CFPiXe4g_jI
+
 
 {
-    "Email": "changedemail@gmail.com"
+    "Email": "Katedngth@gmail.com"
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,16 +51,24 @@ GET http://localhost:9500/api/comment
 ### // create a new comment
 POST http://localhost:9500/api/comment/
 content-Type: application/json
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjU1NDUsImV4cCI6MTcwODM3Mjc0NX0.XaGTne0w8eJJBcYKUyN5U1UqxrHRkWC6lUhuIAvAvxk
 
 {
-    "CommentID": "4",
-    "PostID": "4",
+    "UserID": 1009,
+    "CommentID": "9",
+    "PostID": "5607",
     "CommentDate": "2024-02-09",
     "Content": "this is probably a new comment"
 }
 
 ### // delete a comment
-DELETE http://localhost:9500/api/comment/4
+DELETE http://localhost:9500/api/comment/9
+Authorization:JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDgzNjY5MjgsImV4cCI6MTcwODM3NDEyOH0.p3SJqjA2WuXPomZXUGkTVyaRI315k261JJrFNZbEC-o
+
+
+
+
+
 
 
 ### //get a comment by its id 
@@ -65,7 +76,7 @@ DELETE http://localhost:9500/api/comment/4
 GET http://localhost:9500/api/commentforuser
 
 ### //get a comment by its id 
-GET http://localhost:9500/api/comment/3
+GET http://localhost:9500/api/comment/7
 
 ### // update a comment by id
 PUT http://localhost:9500/api/comment/1
@@ -86,8 +97,8 @@ POST http://localhost:9500/api/post/
 content-Type: application/json
 
 {
-    "PostID": "14",
-    "UserID": "14",
+    "PostID": "5607",
+    "UserID": "1009",
     "Content": "this is definetly a new post",
     "PostDate": "2027",
     "Likes": "14",
@@ -95,7 +106,7 @@ content-Type: application/json
 }
 
 ### // delete a post
-DELETE http://localhost:9500/api/post/4
+DELETE http://localhost:9500/api/post/5607
 
 ### //GET post BY ITS ID
 GET http://localhost:9500/api/post/2

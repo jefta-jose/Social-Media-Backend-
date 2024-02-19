@@ -20,25 +20,26 @@ export const addUserService = async (user) => {
             .query("SELECT * FROM tbl_User WHERE Email = @Email OR Username = @Username");
 
         if (existingUser.recordset.length > 0) {
-            // If a user with the same email or username already exists, return an error
-            throw new Error("User with the same email or username already exists.");
+            // If a user with the same email or username already exists, determine which one it is
+            const duplicateField = existingUser.recordset[0].Email === user.Email ? 'Email' : 'Username';
+            throw new Error(`User with the same ${duplicateField} already exists.`);
         }
 
         // If no existing user found, proceed to insert the new user
         const result = await poolRequest()
-            .input('UserID', sql.Int, user.UserID)
             .input('Username', sql.VarChar, user.Username)
             .input('Email', sql.VarChar, user.Email)
             .input('Password', sql.VarChar, user.Password)
             .input('TagName', sql.VarChar, user.TagName)
             .input('Location', sql.VarChar, user.Location)
-            .query("INSERT INTO tbl_User (UserID, Username, Email, Password, TagName, Location) VALUES (@UserID, @Username, @Email, @Password, @TagName, @Location)");
+            .query("INSERT INTO tbl_User (Username, Email, Password, TagName, Location) VALUES (@Username, @Email, @Password, @TagName, @Location)");
 
         return result;
     } catch (error) {
         return error;
     }
 }
+
 
 // findByCredentialsService function
 export const findByCredentialsService = async (user) => {

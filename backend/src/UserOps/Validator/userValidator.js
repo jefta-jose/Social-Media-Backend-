@@ -3,7 +3,6 @@ import joi from 'joi';
 
 export const userValidator = (user) => {
     const userValidatorSchema = joi.object({
-        UserID: joi.number().integer().required(),
         Username: joi.string().required(),
         Email: joi.string().email().required(),
         Password: joi.string().required(),

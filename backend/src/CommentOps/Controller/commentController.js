@@ -1,8 +1,8 @@
-import { getCommentsForUserService,getCommentService, addCommentService } from '../Services/commentServices.js';
+import { getCommentsForUserService, getCommentService, addCommentService } from '../Services/commentServices.js';
 import { sendNotFound, sendServerError, sendCreated, sendDeleteSuccess, paginate, orderData, checkIfValuesIsEmptyNullUndefined } from '../Helper/responseFunction.js';
 import { commentValidator } from '../Validator/commentValidator.js';
 import { poolRequest, sql } from "../Database/dbConnect.js";
-
+import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 export const getComment = async (req, res) => {
     try {
@@ -96,6 +96,7 @@ export const getaCommenttForUser = async (req, res) => {
 
 export const createComment = async (req, res) => {
     const newComment = {
+        UserID: req.body.UserID,
         CommentID: req.body.CommentID,
         PostID: req.body.PostID,
         CommentDate: req.body.CommentDate,
@@ -163,6 +164,7 @@ async function updateCommentInDatabase(commentId, newContent) {
         throw error;
     }
 }
+
 
 
 ////////////////////////////////////////////////////////////////////////
