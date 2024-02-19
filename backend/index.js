@@ -12,8 +12,6 @@ import groupMemberRouter from './src/GroupMembersOps/Routes/groupMembersRoutes.j
 import friendshipRouter from './src/FriendshipOps/Routes/friendshipRoutes.js';
 import eventRouter from './src/EventOps/Routes/eventRoutes.js';
 import eventAttendeeRouter from './src/EventAttendeeOps/Routes/eventAttendeeRoutes.js';
-import emailTemp from './src/Emails/Email.js';
-import nodemailer from 'nodemailer';
 import cron from 'node-cron';
 
 dotenv.config();
@@ -39,40 +37,6 @@ app.use('/api', groupMemberRouter);
 app.use('/api', friendshipRouter);
 app.use('/api', eventRouter);
 app.use('/api', eventAttendeeRouter);
-
-//middlewares
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
-    }
-});
-const mailOptions = {
-    from: process.env.EMAIL,
-    to: 'ndegwajeff4@gmail.com',
-    subject: 'Sending Email for Yooohooo!',
-    // text: 'test 2 sending dummy emails!'
-    html : emailTemp
-};
-
-app.get('/send-mail', async(req, res) => {
-    try {
-        logger.info('Sending mail....');
-       await transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                logger.error(error);
-                res.status(500).send(error);
-            } else {
-                logger.info(`Email sent: ${info.response}`);
-                res.status(500).send(error);
-            }
-        });
-    } catch (error) {
-        logger.error(error);
-    }
-
-});
 
 //node cron
 

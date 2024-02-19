@@ -1,13 +1,14 @@
 ### //get all users
 GET http://localhost:9500/api/users
 
+
 ### // login router
 POST http://localhost:9500/api/users/auth/login
 content-Type: application/json
 
 {
-    "Username": "user176",
-    "Password": "passw1ord7"
+    "Username": "user001",
+    "Password": "pa00sTYsewor3d1"
 }
 
 
@@ -16,31 +17,16 @@ POST http://localhost:9500/api/users/register
 content-Type: application/json
 
 {
-    "UserID": 85,
-    "Username": "user176",
-    "Email": "kamau781camaw@gmail.com",
-    "Password": "passw1ord7",
-    "TagName": "tag17",
-    "Location": "kir1inyaga"
-}
-
-
-
-### // create a user
-POST http://localhost:9500/api/users
-content-Type: application/json
-
-{
-    "UserID": 785,
-    "Username": "user76",
-    "Email": "kamau78camaw@gmail.com",
-    "Password": "password7",
-    "TagName": "tag7",
-    "Location": "kirinyaga"
+    "UserID": 254,
+    "Username": "user001",
+    "Email": "Katendegwa37@gmail.com",
+    "Password": "pa00sTYsewor3d1",
+    "TagName": "tag254",
+    "Location": "Kiambu"
 }
 
 ### //delete user
-DELETE http://localhost:9500/api/users/78
+DELETE http://localhost:9500/api/users/254
 
 ### //get a user by its id
 GET http://localhost:9500/api/users/2
@@ -364,6 +350,3 @@ content-Type: application/json
     "EventID": "6"
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-### //GET EventAttendee BY ITS ID
-GET http://localhost:9500/send-mail

@@ -1,9 +1,10 @@
 import bcrypt from 'bcrypt';
-import { findByCredentialsService,getUserService, addUserService } from '../Services/userServices.js';
-import { notAuthorized,sendNotFound, sendServerError, sendCreated, sendDeleteSuccess, paginate, orderData, checkIfValuesIsEmptyNullUndefined } from '../Helper/responseFunction.js';
-import { userLoginValidator,userValidator } from '../Validator/userValidator.js';
+import { findByCredentialsService, getUserService, addUserService } from '../Services/userServices.js';
+import { sendNotFound, sendServerError, sendCreated, sendDeleteSuccess, paginate, orderData, checkIfValuesIsEmptyNullUndefined } from '../Helper/responseFunction.js';
+import { userLoginValidator, userValidator } from '../Validator/userValidator.js';
 import { poolRequest, sql } from "../Database/dbConnect.js";
-
+import nodemailer from 'nodemailer';
+import emailTemp from '../../Emails/Email.js';
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // contoller function to register a user
@@ -16,13 +17,16 @@ export const registerUser = async (req, res) => {
     } else {
         try {
             const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(Password, salt); 
+            const hashedPassword = await bcrypt.hash(Password, salt);
             const newUser = { UserID, Username, Password: hashedPassword, Email, TagName, Location };
             const response = await addUserService(newUser);
 
             if (response.message) {
                 sendServerError(res, response.message);
             } else {
+                // Send email after successfully registering the user
+                sendRegistrationEmail(Email);
+
                 sendCreated(res, 'User created successfully');
             }
         } catch (error) {
@@ -31,6 +35,32 @@ export const registerUser = async (req, res) => {
     }
 };
 
+// Function to send registration email
+const sendRegistrationEmail = async (userEmail) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
+        }
+    });
+
+    const mailOptions = {
+        from: process.env.EMAIL,
+        to: userEmail,
+        subject: 'Welcom to the Senior Devs',
+        html: emailTemp
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully');
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // login  controller function 
 export const loginUser = async (req, res) => {
     const { error } = userLoginValidator(req.body);
@@ -54,7 +84,7 @@ export const loginUser = async (req, res) => {
     }
 };
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-export const getUser = async (req, res) => { 
+export const getUser = async (req, res) => {
     try {
         const data = await getUserService();
         if (data.length === 0) {
