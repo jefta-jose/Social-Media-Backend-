@@ -69,10 +69,10 @@ export const loginUser = async (req, res) => {
         return res.status(400).send(error.details[0].message);
     }
 
-    const { Username, Password } = req.body;
+    const { Email, Password } = req.body;
 
     try {
-        const userResponse = await findByCredentialsService({ Username, Password });
+        const userResponse = await findByCredentialsService({ Email, Password });
 
         if (userResponse.error) {
             res.status(400).send(userResponse.error);

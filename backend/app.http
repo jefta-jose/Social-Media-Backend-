@@ -7,7 +7,7 @@ POST http://localhost:9500/api/users/auth/login
 content-Type: application/json
 
 {
-    "Username": "user250",
+    "Email": "Katendegw0a37@gmail.com",
     "Password": "pass1234"
 }
 

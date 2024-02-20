@@ -45,8 +45,8 @@ export const addUserService = async (user) => {
 export const findByCredentialsService = async (user) => {
     try {
         const userFoundResponse = await poolRequest()
-            .input('Username', sql.VarChar, user.Username)
-            .query('SELECT * FROM tbl_user WHERE Username = @Username');
+            .input('Email', sql.VarChar, user.Email)
+            .query('SELECT * FROM tbl_user WHERE Email = @Email');
 
         if (userFoundResponse.recordset[0]) {
             const match = await bcrypt.compare(user.Password, userFoundResponse.recordset[0].Password);
@@ -56,8 +56,8 @@ export const findByCredentialsService = async (user) => {
                 const token = jwt.sign(
                     {
                         id: userData.id,
-                        Username: userData.username,
-                        email: userData.email
+                        email: userData.email,
+                        Password: userData.password
                     },
                     process.env.JWT_SECRET,
                     { expiresIn: "24h" }
