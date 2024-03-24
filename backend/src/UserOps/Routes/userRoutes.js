@@ -3,7 +3,7 @@ import { getUserById, loginUser, registerUser, deleteUser, getUser, updateUser, 
 import authenticateOperations from '../../Authenticator/Authenticator.js';
 
 
-const userRouter = Router();
+const userRouter = Router(); 
 userRouter.put('/users/:id', authenticateOperations, updateUser);
 userRouter.get('/users/:id', authenticateOperations, getUserById);
 userRouter.delete('/users/:id', authenticateOperations, deleteUser);

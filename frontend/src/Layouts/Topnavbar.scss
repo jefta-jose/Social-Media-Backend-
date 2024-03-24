@@ -34,6 +34,16 @@
     gap: 10px;
     padding-right: 3rem;
 
+    a{
+      text-decoration: none;
+      border: 1px solid black;
+      background-color: rgba(255, 0, 0, 0.283);
+      padding: 0 10px;
+      z-index: 1200;
+      position: absolute;
+      right: 1rem;
+    }
+
     .angiee-image-top {
       height: 5.5vh;
       width: 3vw;
@@ -115,6 +125,7 @@
     .icons-content {
       .msg-msg {
         display: none;
+        
       }
       cursor: pointer;
 

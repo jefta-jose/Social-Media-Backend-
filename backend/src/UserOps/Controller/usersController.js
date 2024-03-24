@@ -104,13 +104,12 @@ export const getUser = async (req, res) => {
                 }
             }
         }
-
     } catch (error) {
         sendServerError(res, error);
     }
 }
 
-//////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const getUserById = async (req, res) => {
     try {
         const userId = req.params.id;
@@ -143,7 +142,6 @@ async function getSUserByIdFromDatabase(userId) {
         LEFT JOIN Event e ON ea.EventID = e.EventID
         WHERE u.UserID = @userId;
         `;
-
         const result = await poolRequest()
             .input('userId', sql.VarChar, userId)
             .query(query);

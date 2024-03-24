@@ -26,5 +26,4 @@ const Maincontent = () => {
     </div>
   );
 };
-
 export default Maincontent;
